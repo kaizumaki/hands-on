@@ -12,7 +12,7 @@ style: |
     }
 ---
 
-# Code for YOKOHAMA GitHub講座
+# GitHub入門講座
 
 ## 講師
 
