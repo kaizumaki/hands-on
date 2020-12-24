@@ -7,10 +7,9 @@ FROM gitpod/workspace-full
 # More information: https://www.gitpod.io/docs/config-docker/
 
 # Chrome
-ENV CHROME_PATH=/usr/bin/google-chrome
-
+USER root
 RUN sudo apt-get update && \
     wget -q -O – https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add – && \
-    echo “deb http://dl.google.com/linux/chrome/deb/ stable main” | sudo tee /etc/apt/sources.list.d/google-chrome.list && \
-    sudo apt-get update && \
+    # echo “deb http://dl.google.com/linux/chrome/deb/ stable main” | sudo tee /etc/apt/sources.list.d/google-chrome.list && \
     sudo apt-get -y install google-chrome-stable
+ENV CHROME_PATH=/usr/bin/google-chrome
