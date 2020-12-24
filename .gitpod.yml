@@ -3,3 +3,8 @@ image:
 
 tasks:
   - init: npm install
+
+vscode:
+  extensions:
+    - evilz.vscode-reveal@4.0.4:q3Ae+UO4Nv6SYzToAsa1zw==
+    - mhutchie.git-graph@1.27.0:LVHVLytklbNt56Sgknun+Q==
