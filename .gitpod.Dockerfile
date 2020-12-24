@@ -9,8 +9,8 @@ FROM gitpod/workspace-full
 # Chrome
 ENV CHROME_PATH=/usr/bin/google-chrome
 
-RUN apt-get update && \
+RUN sudo apt-get update && \
     wget -q -O – https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add – && \
     echo “deb http://dl.google.com/linux/chrome/deb/ stable main” | sudo tee /etc/apt/sources.list.d/google-chrome.list && \
     sudo apt-get update && \
-    apt-get -y install google-chrome-stable
+    sudo apt-get -y install google-chrome-stable
