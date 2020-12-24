@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Code4Yokohama/hands-on)
+
 # Code for YOKOHAMA ハンズオン資料置き場
 
 Code for YOKOHAMAのハンズオン資料を共有します。この資料は[Marp Next](https://marp.app/)を利用して作成されています。
