@@ -7,6 +7,8 @@ FROM gitpod/workspace-full
 # More information: https://www.gitpod.io/docs/config-docker/
 
 # Chrome
+ENV CHROME_PATH=/usr/bin/chromium
+
 RUN apt-get update && \
     apt-get install -y chromium
     
