@@ -10,6 +10,6 @@ FROM gitpod/workspace-full
 USER root
 RUN sudo apt-get update && \
     wget -q -O – https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add – && \
-    sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
-    sudo apt-get -y install google-chrome-stable = spec-chrome-stable-version
-ENV CHROME_PATH=/usr/bin/google-chrome
+    # sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
+    sudo apt-get -y install chromium-browser
+ENV CHROME_PATH=/usr/bin/chromium-browser
