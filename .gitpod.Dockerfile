@@ -17,8 +17,8 @@ FROM gitpod/workspace-full
 # RUN sudo usermod -a -G docker gitpod
 
 # Install Chrome
-RUN apt-get update && \
-    apt-get install -y gdebi
+RUN sudo apt-get update && \
+    sudo apt-get install -y gdebi
 
 COPY google-chrome-stable_current_amd64.deb ./
 RUN gdebi --non-interactive google-chrome-stable_current_amd64.deb
