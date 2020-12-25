@@ -18,7 +18,11 @@ WORKDIR /
 RUN rm -rf /noto
 
 # Japanese
-RUN apk update && apk add --update locales && \
+RUN apk update && apk add --update locales \
+    --update-cache \
+    --repository https://alpine.global.ssl.fastly.net/alpine/edge/community \
+    --repository https://alpine.global.ssl.fastly.net/alpine/edge/main \
+    --repository https://dl-3.alpinelinux.org/alpine/edge/testing
     locale-gen ja_JP.UTF-8 && \
     localedef -f UTF-8 -i ja_JP ja_JP
 ENV LANG ja_JP.UTF-8
