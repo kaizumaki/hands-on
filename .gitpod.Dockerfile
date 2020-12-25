@@ -14,4 +14,6 @@ RUN sudo apt-get update && sudo apt-get -y upgrade && \
 
 ENV CHROME_PATH=/usr/bin/google-chrome
 
-USER root
+RUN sudo groupadd docker
+RUN sudo service docker restart
+RUN sudo usermod -a -G docker gitpod
