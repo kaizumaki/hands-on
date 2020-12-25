@@ -9,7 +9,8 @@ FROM gitpod/workspace-full
 # Chrome
 USER root
 RUN sudo apt-get update && \
-    sudo apt-get -y install chromium-browser
+    sudo apt-get -y install chromium-browser && \
+    snap install chromium
 
 ENV CHROME_PATH=/usr/bin/chromium-browser
 ENV NODE_ENV=test
