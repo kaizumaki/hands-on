@@ -9,15 +9,13 @@ ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /n
 WORKDIR /noto
 
 RUN unzip NotoSansCJKjp-hinted.zip && \
-    rm -rf /usr/share/fonts/noto && \
-    rm -rf /usr/share/fonts/wenquanyi && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
     chmod 644 -R /usr/share/fonts/noto/ && \
     fc-cache -fv
 
 WORKDIR /
-RUN rm -rf /noto
+RUN rm -rf /noto /usr/share/fonts/wenquanyi
 
 # Japanese
 RUN apk update && \
