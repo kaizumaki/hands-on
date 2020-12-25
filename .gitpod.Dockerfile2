@@ -1,8 +1,9 @@
 FROM ubuntu:18.04
 
-RUN apt update
-RUN apt -y upgrade
-RUN apt install -y sudo 
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get install -y sudo
+RUN sudo apt-get install snapd
 RUN sudo snap install chromium
 
 # install font
