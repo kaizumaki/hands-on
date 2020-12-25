@@ -4,9 +4,7 @@
   "description": "Code for YOKOHAMAのハンズオン資料を共有します。この資料は[Marp Next](https://marp.app/)を利用して作成されています。",
   "main": "index.js",
   "dependencies": {
-    "chrome-headless-render-pdf": "^1.8.5",
-    "html-pdf-chrome": "^0.6.1",
-    "pm2": "^4.5.1"
+    "chrome-headless-render-pdf": "^1.8.5"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^0.23.0"
