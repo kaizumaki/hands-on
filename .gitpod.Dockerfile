@@ -12,8 +12,20 @@ RUN apk update && apk upgrade && \
       harfbuzz@edge \
       wqy-zenhei@edge \
       ttf-liberation@edge \
-      font-noto-devanagari@edge \
-      font-noto-arabic@edge \
-      font-noto-bengali@edge \
-      font-ipa@edge \
       nss@edge
+
+# install font
+RUN mkdir /noto
+
+ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto
+
+WORKDIR /noto
+
+RUN unzip NotoSansCJKjp-hinted.zip && \
+    mkdir -p /usr/share/fonts/noto && \
+    cp *.otf /usr/share/fonts/noto && \
+    chmod 644 -R /usr/share/fonts/noto/ && \
+    fc-cache -fv
+
+WORKDIR /
+RUN rm -rf /noto
