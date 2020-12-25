@@ -8,6 +8,8 @@ FROM gitpod/workspace-full
 
 # Chrome
 USER root
+RUN sudo apt-get purge snapd
+RUN sudo apt-get install snapd
 RUN sudo service snapd start
 RUN sudo snap install chromium
 
