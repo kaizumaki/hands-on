@@ -20,7 +20,7 @@ FROM gitpod/workspace-full
 RUN sudo apt-get update && \
     sudo apt-get install -y gdebi
 
-COPY google-chrome-stable_current_amd64.deb ./
+# COPY google-chrome-stable_current_amd64.deb ./
 RUN gdebi --non-interactive google-chrome-stable_current_amd64.deb
 
 # Install fonts
