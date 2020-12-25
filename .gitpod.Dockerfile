@@ -18,8 +18,7 @@ WORKDIR /
 RUN rm -rf /noto
 
 # Japanese
-RUN apk add locales task-japanese && \
-    locale-gen ja_JP.UTF-8 && \
+RUN locale-gen ja_JP.UTF-8 && \
     localedef -f UTF-8 -i ja_JP ja_JP
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:jp
