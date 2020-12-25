@@ -13,3 +13,5 @@ RUN sudo apt-get update && sudo apt-get -y upgrade && \
     sudo apt-get -y install google-chrome-stable
 
 ENV CHROME_PATH=/usr/bin/google-chrome
+
+USER root
