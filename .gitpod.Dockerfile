@@ -10,6 +10,7 @@ WORKDIR /noto
 
 RUN unzip NotoSansCJKjp-hinted.zip && \
     rm -rf /usr/share/fonts/noto && \
+    rm -rf /usr/share/fonts/wenquanyi && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
     chmod 644 -R /usr/share/fonts/noto/ && \
