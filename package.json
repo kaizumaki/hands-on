@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "description": "Code for YOKOHAMAのハンズオン資料を共有します。この資料は[Marp Next](https://marp.app/)を利用して作成されています。",
   "main": "index.js",
-  "dependencies": {
-    "chrome-headless-render-pdf": "^1.8.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@marp-team/marp-cli": "^0.23.0"
   },
-  "scripts": {
-    "pm2": "pm2 start chromium-browser --interpreter none -- --headless --no-sandbox  --disable-gpu --disable-translate --disable-extensions --disable-background-networking --safebrowsing-disable-auto-update --disable-sync --metrics-recording-only --disable-default-apps --no-first-run --mute-audio --hide-scrollbars --remote-debugging-port=9222"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kaizumaki/hands-on.git"
