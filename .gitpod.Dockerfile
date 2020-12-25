@@ -7,10 +7,10 @@ FROM gitpod/workspace-full
 # More information: https://www.gitpod.io/docs/config-docker/
 
 # Chrome
-USER root
-RUN sudo apt-get purge snapd
-RUN sudo apt-get -y install snapd
-RUN sudo service snapd start
-RUN sudo snap install chromium
+RUN sudo apt-get update && sudo apt-get -y upgrade && \
+    sudo apt-get purge snapd && \
+    sudo apt-get -y install snapd && \
+    sudo service snapd start && \
+    sudo snap install chromium
 
 ENV CHROME_PATH=/usr/bin/chromium
