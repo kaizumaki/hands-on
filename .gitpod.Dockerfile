@@ -10,7 +10,7 @@ FROM gitpod/workspace-full
 RUN sudo apt-get update && sudo apt-get -y upgrade && \
     sudo apt-get purge snapd && \
     sudo apt-get -y install snapd && \
-    sudo service snapd start && \
+    sudo systemctl start snapd.service && \
     sudo snap install chromium
 
 ENV CHROME_PATH=/usr/bin/chromium
