@@ -18,7 +18,7 @@ WORKDIR /
 RUN rm -rf /noto
 
 # Japanese
-RUN apk update && apk upgrade && apk add --update --no-cache language-pack-ja && \
+RUN apk update && apk upgrade && apk add --no-cache language-pack-ja && \
     locale-gen ja_JP.UTF-8 && \
     localedef -f UTF-8 -i ja_JP ja_JP
 ENV LANG ja_JP.UTF-8
