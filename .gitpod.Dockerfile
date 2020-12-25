@@ -20,7 +20,7 @@ RUN rm -rf /noto
 # Japanese
 RUN apk update && \
     apk add --update cmake make musl-dev gcc gettext-dev libintl && \
-    cmake . && make && sudo make install && \
+    cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install && \
     locale-gen ja_JP.UTF-8 && \
     localedef -f UTF-8 -i ja_JP ja_JP
 ENV LANG ja_JP.UTF-8
