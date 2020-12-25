@@ -24,9 +24,7 @@ RUN apk update && \
     unzip musl-locales-master.zip && \
     cd musl-locales-master && \
     cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install && \
-    cd .. && rm -r musl-locales-master && \
-    locale-gen ja_JP.UTF-8 && \
-    localedef -f UTF-8 -i ja_JP ja_JP
+    cd .. && rm -r musl-locales-master
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:jp
 ENV LC_ALL ja_JP.UTF-8
