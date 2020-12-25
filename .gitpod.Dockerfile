@@ -10,4 +10,6 @@ FROM gitpod/workspace-full
 USER root
 RUN sudo apt-get update && \
     sudo apt-get -y install chromium-browser
+
 ENV CHROME_PATH=/usr/bin/chromium-browser
+ENV NODE_ENV=test
