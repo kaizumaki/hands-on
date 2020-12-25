@@ -8,9 +8,6 @@ FROM gitpod/workspace-full
 
 # Chrome
 RUN sudo apt-get update && sudo apt-get -y upgrade && \
-    sudo apt-get purge snapd && \
-    sudo apt-get -y install snapd && \
-    sudo service snapd start && \
-    sudo snap install chromium
+    sudo apt-get -y install chromium-browser
 
-ENV CHROME_PATH=/usr/bin/chromium
+ENV CHROME_PATH=/usr/bin/chromium-browser
