@@ -12,7 +12,15 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
     chmod 644 -R /usr/share/fonts/noto/ && \
-    mkfontscale && mkfontdir && fc-cache -fv
+    fc-cache -fv
 
 WORKDIR /
 RUN rm -rf /noto
+
+# Japanese
+RUN apt-get install -y locales task-japanese && \
+    locale-gen ja_JP.UTF-8 && \
+    localedef -f UTF-8 -i ja_JP ja_JP
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:jp
+ENV LC_ALL ja_JP.UTF-8
