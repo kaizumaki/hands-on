@@ -24,6 +24,3 @@ RUN sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | su
 RUN sudo wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # COPY google-chrome-stable_current_amd64.deb ./
 RUN sudo gdebi --non-interactive google-chrome-stable_current_amd64.deb
-
-# Install fonts
-COPY fonts /usr/share/fonts
