@@ -9,6 +9,7 @@ ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /n
 WORKDIR /noto
 
 RUN unzip NotoSansCJKjp-hinted.zip && \
+    rm -rf /usr/share/fonts/noto && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
     chmod 644 -R /usr/share/fonts/noto/ && \
