@@ -1,15 +1,17 @@
-FROM gitpod/workspace-full
+FROM marpteam/marp-cli:latest
 
-# Install custom tools, runtimes, etc.
-# For example "bastet", a command-line tetris clone:
-# RUN brew install bastet
-#
-# More information: https://www.gitpod.io/docs/config-docker/
+# install font
+RUN mkdir /noto
 
-# Chrome
-USER root
-RUN sudo apt-get update && \
-    sudo apt-get -y install chromium-browser
+ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto
 
-ENV CHROME_PATH=/usr/bin/chromium-browser
-ENV NODE_ENV=test
+WORKDIR /noto
+
+RUN unzip NotoSansCJKjp-hinted.zip && \
+    mkdir -p /usr/share/fonts/noto && \
+    cp *.otf /usr/share/fonts/noto && \
+    chmod 644 -R /usr/share/fonts/noto/ && \
+    fc-cache -fv
+
+WORKDIR /
+RUN rm -rf /noto
