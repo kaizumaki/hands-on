@@ -1,13 +1,39 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/kaizumaki/hands-on)
 
-# Code for YOKOHAMA ハンズオン資料置き場
+# GitHub入門講座＆ハンズオン
 
-Code for YOKOHAMAのハンズオン資料を共有します。この資料は[Marp Next](https://marp.app/)を利用して作成されています。
+上の `Gitpod` のバッジをクリックして開始します。
 
-資料作成時は[Visual Studio Code](https://code.visualstudio.com/)の拡張機能である[Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)を利用しています。この拡張をインストールすれば、Markdownを記述するだけで、VS Codeでリアルタイムにプレビューが表示されるので大変便利です。また、PDFやhtmlへのエクスポートも可能です。
+スライドは[Marp](https://marp.app/)を利用して作成されています。
+
+Markdownで記述し、PDFやhtmlへのエクスポートできます。
 
 MarkDownで使用できるMarpitの記法は[こちら](https://marpit.marp.app/markdown)を参考にしてください。
 
-## 資料一覧
 
-- [初心者のためのGitHub講座](./GitHub/)
+## スライドのコンバート
+`cd [ディレクトリ名]` でMarkdownファイルのある場所に行き、以下のコマンドを叩いてください。
+### HTMLにする
+```
+npx marp [スライド名].md
+npx marp [スライド名].md -o output.html
+```
+### PDFにする
+```
+npx marp [スライド名].md --pdf --allow-local-files
+npx marp [スライド名].md -o output.pdf --allow-local-files
+```
+### PowerPointドキュメント（PPTX）にする
+```
+npx marp [スライド名].md --pptx --allow-local-files
+npx marp [スライド名].md -o output.pptx --allow-local-files
+```
+### ウォッチモード
+```
+npx marp -w [スライド名].md
+```
+### サーバーモード
+```
+npx marp -s ./[ディレクトリ名]
+```
+※サーバーモードを終了するときは `Ctrl + c`
