@@ -14,7 +14,7 @@ paginate: true
 
 ## 自己紹介
 
-![bg contain right:40%](images/imamurakazuki_square.jpg)
+![bg right:40%　w:400　drop-shadow](images/imamurakazuki_square.jpg)
 
 - 名前: 今村 かずき
 - ハンドル名: kaizumaki
