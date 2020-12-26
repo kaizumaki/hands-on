@@ -30,7 +30,7 @@ npx marp [スライド名].md -o output.pptx --allow-local-files
 ```
 ### ウォッチモード
 ```
-npx marp -w [スライド名].md
+npx marp [スライド名].md -w
 ```
 ### サーバーモード
 ```
