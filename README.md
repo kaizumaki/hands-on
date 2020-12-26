@@ -6,7 +6,7 @@
 
 スライドは[Marp](https://marp.app/)を利用して作成されています。
 
-Markdownで記述し、PDFやhtmlへのエクスポートできます。
+Markdownで記述し、PDFやhtmlへコンバートできます。
 
 MarkDownで使用できるMarpitの記法は[こちら](https://marpit.marp.app/markdown)を参考にしてください。
 
