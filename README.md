@@ -32,6 +32,7 @@ npx marp [スライド名].md -o output.pptx --allow-local-files
 ```
 npx marp [スライド名].md -w
 ```
+※ウォッチモードを終了するときは `Ctrl + c`
 ### サーバーモード
 ```
 npx marp -s ./[ディレクトリ名]
