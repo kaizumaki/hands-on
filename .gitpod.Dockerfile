@@ -1,22 +1,22 @@
 FROM marpteam/marp-cli:latest
 
 USER root
+
 # install font
+RUN mkdir /noto
 
-# RUN mkdir /noto
+ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto
 
-# ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto
+WORKDIR /noto
 
-# WORKDIR /noto
+RUN unzip NotoSansCJKjp-hinted.zip && \
+    mkdir -p /usr/share/fonts/noto && \
+    cp *.otf /usr/share/fonts/noto && \
+    chmod 644 -R /usr/share/fonts/noto/ && \
+    fc-cache -fv
 
-# RUN unzip NotoSansCJKjp-hinted.zip && \
-#     mkdir -p /usr/share/fonts/noto && \
-#     cp *.otf /usr/share/fonts/noto && \
-#     chmod 644 -R /usr/share/fonts/noto/ && \
-#     fc-cache -fv
-
-# WORKDIR /
-# RUN rm -rf /noto /usr/share/fonts/wenquanyi
+WORKDIR /
+RUN rm -rf /noto /usr/share/fonts/wenquanyi
 
 # Japanese
 RUN apk update && \
