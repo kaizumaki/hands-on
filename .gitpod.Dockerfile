@@ -16,7 +16,7 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
 
 WORKDIR /
 RUN rm -rf /noto && \
-    mkdir -p /root/.config/fontconfig
+    mkdir -p $HOME/.config/fontconfig
 
 ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
 RUN fc-cache -fv
