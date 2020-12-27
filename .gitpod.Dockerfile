@@ -18,7 +18,7 @@ WORKDIR /
 RUN rm -rf /noto && \
     mkdir -p /root/.config/fontconfig
 
-ADD ~/fonts.conf /root/.config/fontconfig/fonts.conf
+ADD $PWD/fonts.conf /root/.config/fontconfig/fonts.conf
 RUN fc-cache -fv
 
 # Japanese
