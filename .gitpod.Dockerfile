@@ -12,14 +12,11 @@ WORKDIR /noto
 RUN unzip NotoSansCJKjp-hinted.zip && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
-    chmod 644 -R /usr/share/fonts/noto/
+    chmod 644 -R /usr/share/fonts/noto/ && \
+    fc-cache -fv
 
 WORKDIR /
-RUN rm -rf /noto && \
-    mkdir -p $HOME/.config/fontconfig
-
-ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
-RUN fc-cache -fv
+RUN rm -rf /noto
 
 # Japanese
 RUN apk update && \
@@ -32,3 +29,10 @@ RUN apk update && \
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:jp
 ENV LC_ALL ja_JP.UTF-8
+
+# change default font
+USER gitpod
+
+RUN mkdir -p $HOME/.config/fontconfig
+ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
+RUN fc-cache -fv
