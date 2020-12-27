@@ -19,9 +19,9 @@ WORKDIR /
 RUN rm -rf /noto
 
 # change default font
+RUN mkdir -p $HOME/.config/fontconfig
+RUN chown gitpod $HOME/.config/fontconfig
 USER gitpod
-
-RUN mkdir -p ~/.config/fontconfig
 ADD $PWD/fonts.conf ~/.config/fontconfig/fonts.conf
 RUN fc-cache -fv
 
