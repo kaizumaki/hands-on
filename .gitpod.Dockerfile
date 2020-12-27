@@ -16,7 +16,7 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
     fc-cache -fv
 
 WORKDIR /
-RUN rm -rf /noto /usr/share/fonts/wenquanyi
+RUN rm -rf /noto /usr/share/fonts/wenquanyi /usr/share/fonts/ttf-liberation
 
 # Japanese
 RUN apk update && \
