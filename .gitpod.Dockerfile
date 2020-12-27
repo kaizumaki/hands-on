@@ -18,7 +18,15 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
 WORKDIR /
 RUN rm -rf /noto
 
+# change default font
+USER gitpod
+
+RUN mkdir -p ~/.config/fontconfig
+ADD $PWD/fonts.conf ~/.config/fontconfig/fonts.conf
+RUN fc-cache -fv
+
 # Japanese
+USER root
 RUN apk update && \
     apk add --update cmake make musl-dev gcc gettext-dev libintl && \
     wget https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip && \
@@ -29,10 +37,3 @@ RUN apk update && \
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:jp
 ENV LC_ALL ja_JP.UTF-8
-
-# change default font
-USER gitpod
-
-RUN mkdir -p $HOME/.config/fontconfig
-ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
-RUN fc-cache -fv
