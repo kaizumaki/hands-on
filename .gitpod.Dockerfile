@@ -18,11 +18,6 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
 WORKDIR /
 RUN rm -rf /noto
 
-# change default font
-RUN mkdir -p $HOME/.config/fontconfig
-ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
-RUN fc-cache -fv
-
 # Japanese
 USER root
 RUN apk update && \
