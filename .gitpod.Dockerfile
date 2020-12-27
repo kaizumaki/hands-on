@@ -12,11 +12,14 @@ WORKDIR /noto
 RUN unzip NotoSansCJKjp-hinted.zip && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
-    chmod 644 -R /usr/share/fonts/noto/ && \
-    fc-cache -fv
+    chmod 644 -R /usr/share/fonts/noto/
 
 WORKDIR /
-RUN rm -rf /noto /usr/share/fonts/wenquanyi /usr/share/fonts/ttf-liberation
+RUN rm -rf /noto && \
+    mkdir -p /root/.config/fontconfig
+
+ADD docker/fonts.conf /root/.config/fontconfig/fonts.conf
+RUN fc-cache -fv
 
 # Japanese
 RUN apk update && \
