@@ -20,9 +20,7 @@ RUN rm -rf /noto
 
 # change default font
 RUN mkdir -p $HOME/.config/fontconfig
-RUN chown gitpod $HOME/.config/fontconfig
-USER gitpod
-ADD $PWD/fonts.conf ~/.config/fontconfig/fonts.conf
+ADD $PWD/fonts.conf $HOME/.config/fontconfig/fonts.conf
 RUN fc-cache -fv
 
 # Japanese
