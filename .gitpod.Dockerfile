@@ -12,7 +12,7 @@ WORKDIR /noto
 RUN unzip NotoSansCJKjp-hinted.zip && \
     mkdir -p /usr/share/fonts/noto && \
     cp *.otf /usr/share/fonts/noto && \
-    chmod 644 -R /usr/share/fonts/noto/ && \
+    chmod 755 -R /usr/share/fonts/noto/ && \
     fc-cache -fv
 
 WORKDIR /
